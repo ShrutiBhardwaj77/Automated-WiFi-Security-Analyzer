@@ -1,5 +1,6 @@
 #include "analyzer.h"
 #include "logger.h"
+#include "packet_capture.h"
 #include <cstdlib>
 
 void Analyzer::detectInterface() {
@@ -20,4 +21,8 @@ void Analyzer::checkOpenPorts() {
 void Analyzer::capturePackets() {
     Logger::log("Capturing 10 live packets...");
     system("sudo tcpdump -i en0 -c 10");
+}
+void Analyzer::capturePacketsRealTime()
+{
+    startPacketCapture();
 }

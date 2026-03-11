@@ -22,7 +22,7 @@ int main() {
             case 1: analyzer.detectInterface(); break;
             case 2: analyzer.listDevices(); break;
             case 3: analyzer.checkOpenPorts(); break;
-            case 4: analyzer.capturePackets(); break;
+            case 4: analyzer.capturePacketsRealTime(); break;
             case 5: return 0;
             default: std::cout << "Invalid choice\n";
         }
