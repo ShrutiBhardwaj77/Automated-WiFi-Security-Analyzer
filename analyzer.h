@@ -7,6 +7,8 @@ public:
     void listDevices();
     void checkOpenPorts();
     void capturePackets();
+    void capturePacketsRealTime();
+void trafficSummary();
 };
 
 #endif
