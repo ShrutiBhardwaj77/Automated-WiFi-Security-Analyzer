@@ -1,6 +1,8 @@
 #include "analyzer.h"
 #include <iostream>
 
+using namespace std;
+
 int main() {
 
     Analyzer analyzer;
@@ -8,23 +10,44 @@ int main() {
 
     while (true) {
 
-        std::cout << "\nNetwork Analyzer\n";
-        std::cout << "1. Detect Interface\n";
-        std::cout << "2. List Devices\n";
-        std::cout << "3. Check Open Ports\n";
-        std::cout << "4. Capture Packets\n";
-        std::cout << "5. Exit\n";
-        std::cout << "Choice: ";
+        cout << "\n===== Network Traffic Analyzer =====\n";
+        cout << "1. Detect Interface\n";
+        cout << "2. List Devices\n";
+        cout << "3. Check Open Ports\n";
+        cout << "4. Capture Packets (Real Time)\n";
+        cout << "5. Traffic Summary\n";
+        cout << "6. Exit\n";
+        cout << "Choice: ";
 
-        std::cin >> choice;
+        cin >> choice;
 
         switch (choice) {
-            case 1: analyzer.detectInterface(); break;
-            case 2: analyzer.listDevices(); break;
-            case 3: analyzer.checkOpenPorts(); break;
-            case 4: analyzer.capturePacketsRealTime(); break;
-            case 5: return 0;
-            default: std::cout << "Invalid choice\n";
+
+            case 1:
+                analyzer.detectInterface();
+                break;
+
+            case 2:
+                analyzer.listDevices();
+                break;
+
+            case 3:
+                analyzer.checkOpenPorts();
+                break;
+
+            case 4:
+                analyzer.capturePacketsRealTime();
+                break;
+
+            case 5:
+                analyzer.trafficSummary();
+                break;
+
+            case 6:
+                return 0;
+
+            default:
+                cout << "Invalid choice\n";
         }
     }
 
